@@ -23,7 +23,7 @@ def check_for_files(directory):
         if directory != None and os.path.exists(directory): # Checking if the data source directory exists or not. If it does, then proceed to next step else print error message.
             filelist = os.listdir(directory) # List all files in data source directory.
             print("\nFiles Info: ")
-            print("_____________")
+            print("___________")
             print("Total file count: ", len(filelist))
             list_file_extensions_with_counts(directory=directory)
             list_files_sorted_by_extension(directory=directory)            
@@ -62,7 +62,7 @@ def list_files_sorted_by_extension(directory):
     Args:
     - directory (str): Path to the directory.
     """
-    # Initialize a list to store file names
+    # Initialize a list to store file names 
     files = []
     # Iterate through the files in the directory
     for filename in os.listdir(directory):
@@ -78,6 +78,13 @@ def list_files_sorted_by_extension(directory):
 
 
 def get_data_file_info(filename):
+    """
+    Get the datafile information.
+    
+    Args:
+    - filename (str): Path to the datafile.
+    """
+    # Datafile Information
     print("\nData file to be analysed: ", filename)
     filetype = os.path.splitext(filename)[1]
     print("File type: ", filetype)
