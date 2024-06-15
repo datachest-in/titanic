@@ -9,6 +9,7 @@ __pycache__/
 *.pyc
 __pycache__/
 *.sqlite3
+/.vscode/
 
 # Environment variables
 .env
