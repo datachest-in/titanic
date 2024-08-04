@@ -12,7 +12,7 @@ from utils.file_info import check_for_files, get_data_file_info
 from utils.read_properties import ReadProperties as rp
 
 
-config = rp(filepath="main_confg.properties")
+config = rp(filepath="main_config.properties")
 config.read_properties()
 
 # Defining data source
