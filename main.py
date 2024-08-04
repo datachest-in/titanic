@@ -33,6 +33,6 @@ if __name__ == '__main__':
     get_data_file_info(DATA_FILE)
     # Data analysis
     data_analyser = DataAnalyser(DATA_FILE)
-    data_analyser.preprocess()
+    data_analyser.start_analysis()
 
 
