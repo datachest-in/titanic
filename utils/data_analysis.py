@@ -14,9 +14,6 @@ class DataAnalyser:
         self.datafile = datafile
 
     def preprocess(self):
-        print("\n=================================")
-        print("#  Data Analysis in progress ...")
-        print("=================================\n")
         # Creating dataframe from the datafile.
         df = pd.read_csv(self.datafile)
         print(df)
@@ -27,3 +24,11 @@ class DataAnalyser:
         print("\nNumber of Columns: ", cols)
         rows=df.shape[0] # number of rows in the data file.
         print("Number of Rows: ", rows)
+
+    
+
+    def start_analysis(self):
+        print("\n=================================")
+        print("#  Data Analysis in progress ...")
+        print("=================================\n")
+        self.preprocess()
