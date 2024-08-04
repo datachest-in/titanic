@@ -7,7 +7,8 @@
 
 # Import modules
 import os
-import pandas as pd
+
+from utils.data_analysis import DataAnalyser
 from utils.file_info import check_for_files, get_data_file_info
 from utils.read_properties import ReadProperties as rp
 
@@ -23,24 +24,15 @@ print("\nRoot Directory: ",ROOT_DIR)
 DATA_DIR = os.path.join(ROOT_DIR, config.data_dir)
 print("\nData Source Directory: ",DATA_DIR)
 
-# Data Analysis
+# Data file extraction
 DATA_FILE = os.path.join(DATA_DIR, config.data_file)
-
-df = pd.read_csv(DATA_FILE)
-print(df)
-# Extracting the column names from the data file.
-columns=df.columns.to_list()
-print("\nColumn Names: ", ", ".join(columns))
-cols=df.shape[1] # number of columns in the data file.
-print("\nNumber of Columns: ", cols)
-rows=df.shape[0] # number of rows in the data file.
-print("Number of Rows: ", rows)
-
-
 
 # Main code
 if __name__ == '__main__':
     check_for_files(DATA_DIR)
     get_data_file_info(DATA_FILE)
+    # Data analysis
+    data_analyser = DataAnalyser(DATA_FILE)
+    data_analyser.preprocess()
 
 
